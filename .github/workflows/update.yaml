@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - cron-test
-  scheduled:
+  schedule:
     -cron: '0 3 * * *'
 
 jobs:
