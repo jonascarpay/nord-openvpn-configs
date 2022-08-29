@@ -5,7 +5,7 @@ on:
     branches:
       - cron-test
   schedule:
-    -cron: '0 3 * * *'
+    - cron: '0 3 * * *'
 
 jobs:
   update:
