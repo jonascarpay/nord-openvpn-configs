@@ -11,8 +11,12 @@ jobs:
       - uses: actions/checkout@v2
       - run: ./update.sh
       - run: |
-          git config user.email "jonascarpay@gmail.com"
-          git config user.name "Jonas Carpay"
-          git add .
-          git commit -m "Nord configs at $(date -u)"
-          git push
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No updates!"
+          else
+            git config user.email "jonascarpay@gmail.com"
+            git config user.name "Jonas Carpay"
+            git add .
+            git commit -m "Nord configs at $(date -u)"
+            git push
+          fi
